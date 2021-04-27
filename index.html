@@ -17,15 +17,17 @@
     ></script>
     <title>Reservia</title>
   </head>
+
   <body>
     <header>
       <img src="img/logo/Reservia.svg" alt="logo resesrvia" />
       <ul>
         <li><a href="#place">Hébergements</a></li>
         <li><a href="#activity">Activités</a></li>
-        <li><a href="#">S'inscrire</a></li>
       </ul>
+      <a id="inscription" href="#">S'inscrire</a>
     </header>
+
     <nav>
       <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
       <p>En plein centre ville ou en pleine nature</p>
@@ -39,6 +41,9 @@
           required
         />
         <input id="button" type="button" value="Rechercher" name="recherche" />
+        <button id="button-icon" type="button">
+          <i class="fas fa-search"></i>
+        </button>
       </form>
       <div id="filters">
         <h1>Filtres</h1>
@@ -65,6 +70,7 @@
       <div id="info"><i class="fas fa-info"></i></div>
       <p>Plus de 500 logements sont disponibles dans cette ville</p>
     </nav>
+
     <section id="place">
       <article>
         <h1>Hébergements à Marseille</h1>
@@ -174,6 +180,7 @@
         </div>
         <h1>Afficher plus</h1>
       </article>
+
       <aside>
         <div id="chart">
           <h1>Les plus populaires</h1>
@@ -234,7 +241,74 @@
         </div>
       </aside>
     </section>
-    <section id="activity"></section>
-    <footer></footer>
+    <section id="activity">
+      <h1>Activités à Marseille</h1>
+      <div id="block-activity">
+        <a class="block-activity-one" href="">
+          <img
+            src="img/activites/small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg"
+            alt="photo vieux port marseille"
+          />
+          <h2>Vieux Port</h2>
+        </a>
+        <div class="block-activity-two">
+          <a class="b-a-small-one" href="">
+            <img
+              src="img/activites/small/paul-hermann-QFTrLdQIRhI-unsplash.jpg"
+              alt="photo de fort"
+            />
+            <h2>Fort de Pomègues</h2>
+          </a>
+          <a class="b-a-small-two" href="">
+            <img
+              src="img/activites/small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg"
+              alt="photo paysage mer"
+            />
+            <h2>Îles du Frioul</h2>
+          </a>
+        </div>
+        <a class="block-activity-one" href="">
+          <img
+            src="img/activites/small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg"
+            alt="photo paysage mer montagne"
+          />
+          <h2>Parc National des Calanques</h2>
+        </a>
+        <div class="block-activity-two">
+          <a class="b-a-small" href="">
+            <img
+              src="img/activites/small/florian-wehde-xW9e8gdotxI-unsplash.jpg"
+              alt="photo notre dame marseille"
+            />
+            <h2>Notre-Dame-de-la-Garde</h2>
+          </a>
+          <a class="b-a-small" href="">
+            <img
+              src="img/activites/small/lena-paulin-wH2-EJoDcV0-unsplash.jpg"
+              alt="photo parc longchamp marseille"
+            />
+            <h2>Parc Longchamp</h2>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div id="about">
+        <h2>A Propos</h2>
+        <p>Fonctionnement du site</p>
+        <p>Conditions générales</p>
+        <p>Données et confidentialité</p>
+      </div>
+      <div id="accommodation">
+        <h2>Nos Hébergements</h2>
+        <p>Charte qualité</p>
+        <p>Soumettre votre hôtel</p>
+      </div>
+      <div id="assistance">
+        <h2>Assistance</h2>
+        <p>Centre d'aide</p>
+        <p>Nous contacter</p>
+      </div>
+    </footer>
   </body>
 </html>

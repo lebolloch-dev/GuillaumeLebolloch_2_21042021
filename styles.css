@@ -1,5 +1,4 @@
 body {
-  background-color: white;
   margin: 50px 50px 50px 50px;
   font-family: "Raleway", sans-serif;
 }
@@ -14,28 +13,39 @@ a {
 
 /* HEADER/MENU */
 header {
+  position: relative;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
+}
+header img {
+  position: absolute;
+  left: 0px;
+}
+#inscription {
+  color: #0065fc;
+  font-weight: bold;
+  margin-left: 65px;
 }
 
 header ul {
   display: flex;
-  width: 400px;
+  width: 250px;
   justify-content: space-between;
-  letter-spacing: 0.32px;
+  padding: 0px;
 }
 
-header a:hover {
+header ul a:hover {
   color: #0065fc;
-  font-weight: bold;
-  letter-spacing: 0;
+  padding-top: 50px;
+  border-top: 3px solid #0065fc;
 }
 
 /* RECHERCHE HEBERGEMENTS  */
 
 h1 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 0px;
 }
 
@@ -51,7 +61,7 @@ nav form {
 
   width: fit-content;
 
-  align-items: baseline;
+  align-items: center;
 }
 
 .fa-map-marker-alt {
@@ -99,6 +109,19 @@ nav form {
   border: none;
   width: 130px;
 }
+#button-icon {
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  background-color: #0065fc;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  margin-left: -40px;
+}
 
 /* FILTRES */
 
@@ -107,6 +130,9 @@ nav form {
   margin-top: 20px;
   align-items: baseline;
   flex-flow: wrap;
+}
+#filters h1 {
+  margin-right: 20px;
 }
 
 .filter {
@@ -121,8 +147,13 @@ nav form {
   margin-right: 20px;
   font-size: 1.2em;
   font-weight: bold;
+  transition: all ease-in-out 0.5s;
 }
-
+.filter:hover,
+.fa-heart:hover {
+  transition: all ease-in-out 0.5s;
+  background-color: #deebff;
+}
 .filter i {
   font-size: 1.2em;
   color: #0065fc;
@@ -159,11 +190,13 @@ nav form {
 }
 nav p:nth-of-type(2) {
   margin-top: 23px;
+  margin-bottom: 40px;
 }
 
 /* HEBERGEMENTS */
 #place {
   display: flex;
+  flex-flow: wrap-reverse;
   justify-content: space-between;
 }
 #place h1 {
@@ -175,7 +208,7 @@ nav p:nth-of-type(2) {
   border-radius: 25px;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 800px;
   height: 555px;
   background: #f2f2f2;
 }
@@ -189,7 +222,7 @@ nav p:nth-of-type(2) {
 .bedroom {
   border: 5px solid white;
   border-radius: 25px;
-  margin: 5px;
+  margin: 0px;
   width: 230px;
   height: 190px;
   background: white;
@@ -231,7 +264,7 @@ nav p:nth-of-type(2) {
   border-radius: 25px;
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 350px;
   height: 555px;
   background: #f2f2f2;
 }
@@ -242,18 +275,23 @@ nav p:nth-of-type(2) {
 #chart {
   justify-content: space-between;
   display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 #popular {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   justify-content: space-between;
+  align-items: center;
 }
 .popular-bedroom {
   border: 5px solid white;
   background: white;
   border-radius: 25px;
   height: 130px;
+  width: 320px;
   display: flex;
   box-shadow: 2px 1px 20px 0px rgba(0, 0, 0, 0.2);
 }
@@ -270,6 +308,180 @@ nav p:nth-of-type(2) {
 }
 
 .popular-bedroom-info p {
+  font-size: 0.9em;
   margin-top: 3px;
   margin-bottom: 30px;
+}
+
+/* ACTIVITES MARSEILLE */
+
+#activity {
+  margin-top: 50px;
+}
+
+#block-activity {
+  justify-content: space-between;
+  display: flex;
+  flex-flow: wrap;
+  margin-top: 25px;
+}
+#block-activity img {
+  width: 300px;
+}
+#block-activity h2 {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  font-size: 1em;
+  position: absolute;
+  bottom: -15px;
+  left: 0px;
+  right: 0px;
+  background-color: white;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.block-activity-one {
+  box-shadow: 2px 1px 20px 0px rgba(0, 0, 0, 0.2);
+}
+.block-activity-one,
+.block-activity-two {
+  width: 300px;
+  height: 450px;
+  border-radius: 25px;
+}
+.block-activity-one,
+.b-a-small-one,
+.b-a-small-two,
+.b-a-small {
+  position: relative;
+}
+
+.block-activity-two {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-activity-one img {
+  height: 450px;
+  border-radius: 25px;
+}
+
+.b-a-small-one,
+.b-a-small-one img {
+  height: 250px;
+  border-radius: 25px;
+}
+
+.b-a-small-two,
+.b-a-small-two img {
+  height: 160px;
+  border-radius: 25px;
+}
+
+.b-a-small,
+.b-a-small img {
+  height: 200px;
+  border-radius: 25px;
+}
+
+.b-a-small-one,
+.b-a-small-two,
+.b-a-small {
+  box-shadow: 2px 1px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  background: #f2f2f2;
+  padding: 50px;
+  margin: 50px -50px -50px -50px;
+  flex-flow: wrap;
+}
+
+footer h2 {
+  font-size: 1em;
+}
+
+footer div {
+  margin-right: 250px;
+}
+
+@media screen and (max-width: 376px) {
+  body {
+    margin: 0px;
+  }
+  nav {
+    padding: 20px;
+  }
+  #filters {
+    position: relative;
+    height: 220px;
+    align-content: flex-end;
+  }
+  #filters h1 {
+    position: absolute;
+  }
+
+  #button {
+    display: none;
+  }
+
+  #button-icon {
+    display: flex;
+  }
+  .filter {
+    padding-left: 50px;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    transition: none;
+  }
+
+  .icons {
+    left: -2px;
+    height: 41px;
+    width: 41px;
+  }
+
+  #place aside {
+    height: 600px;
+    width: 100%;
+    padding: 0px;
+    border-radius: 0px;
+  }
+
+  footer {
+    padding: 30px;
+    margin: 0px;
+    flex-direction: column;
+  }
+  footer div {
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+
+  #place article {
+    padding: 0px;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 555px;
+    background: white;
+  }
+
+  #popular {
+    padding-bottom: 50px;
+  }
+
+  #chart {
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
