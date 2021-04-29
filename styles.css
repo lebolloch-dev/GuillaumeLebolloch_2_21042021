@@ -1,3 +1,11 @@
+/* GENERAL */
+
+html {
+  scroll-behavior: smooth;
+}
+#reponsive-less-than-360 {
+  display: none;
+}
 body {
   margin: 50px 50px 50px 50px;
   font-family: "Raleway", sans-serif;
@@ -5,13 +13,13 @@ body {
 li {
   list-style: none;
 }
-
 a {
   text-decoration: none;
   color: black;
 }
 
-/* HEADER/MENU */
+/* HEADER */
+
 header {
   position: relative;
   display: flex;
@@ -26,34 +34,51 @@ header img {
 #inscription {
   color: #0065fc;
   font-weight: bold;
-  margin-left: 65px;
+  margin-left: 30px;
 }
-
 header ul {
   display: flex;
-  width: 250px;
-  justify-content: space-between;
-  padding: 0px;
+  width: 300px;
 }
-
+header ul li {
+  position: relative;
+  width: 50%;
+  text-align: center;
+}
+header ul li::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 3px;
+  background: #0065fc;
+  top: -60px;
+  left: 0px;
+  transition: all ease-in-out 0.5s;
+  opacity: 0;
+}
+header ul li:hover:after {
+  opacity: 1;
+  width: 150px;
+  transition: all ease-in-out 0.5s;
+}
 header ul a:hover {
+  transition: all ease-in-out 0.5s;
   color: #0065fc;
-  padding-top: 50px;
-  border-top: 3px solid #0065fc;
 }
 
-/* RECHERCHE HEBERGEMENTS  */
+/* NAV */
 
-h1 {
+h2 {
   font-size: 1.4em;
   margin-bottom: 0px;
 }
-
 nav p {
-  font-size: 0.9em;
-  margin-top: 5px;
+  font-size: 1em;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
+
+/*  NAV -> SEARCH -> BARRE DE RECHERCHE  */
 
 nav form {
   align-items: center;
@@ -63,7 +88,6 @@ nav form {
 
   align-items: center;
 }
-
 .fa-map-marker-alt {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -74,7 +98,6 @@ nav form {
   padding-left: 17px;
   padding-right: 17px;
 }
-
 #search {
   display: flex;
   height: 47px;
@@ -89,7 +112,6 @@ nav form {
   padding-top: 0px;
   padding-bottom: 1px;
 }
-
 #search:focus {
   border-left: 2px solid #555d5e;
   outline: none;
@@ -123,7 +145,7 @@ nav form {
   margin-left: -40px;
 }
 
-/* FILTRES */
+/* NAV -> FILTERS -> FILTRES */
 
 #filters {
   display: flex;
@@ -131,10 +153,9 @@ nav form {
   align-items: baseline;
   flex-flow: wrap;
 }
-#filters h1 {
+#filters h2 {
   margin-right: 20px;
 }
-
 .filter {
   display: flex;
   position: relative;
@@ -159,7 +180,6 @@ nav form {
   color: #0065fc;
   background: #deebff;
 }
-
 .icons {
   position: absolute;
   display: flex;
@@ -171,7 +191,6 @@ nav form {
   background-color: #deebff;
   border-radius: 100px;
 }
-
 #info {
   margin-right: 10px;
   margin-top: 20px;
@@ -188,20 +207,24 @@ nav form {
   font-size: 0.8em;
   color: #0065fc;
 }
-nav p:nth-of-type(2) {
+nav p:last-child {
   margin-top: 23px;
   margin-bottom: 40px;
 }
 
-/* HEBERGEMENTS */
+/* PLACE -> ARTICLE -> HEBERGEMENTS */
+
 #place {
   display: flex;
   flex-flow: wrap-reverse;
   justify-content: space-between;
 }
-#place h1 {
+#place h2 {
   margin-top: 0px;
   margin-bottom: 20px;
+}
+#none {
+  display: none;
 }
 #place article {
   padding: 35px;
@@ -212,7 +235,6 @@ nav p:nth-of-type(2) {
   height: 555px;
   background: #f2f2f2;
 }
-
 #rooms {
   height: 500px;
   justify-content: space-between;
@@ -228,15 +250,13 @@ nav p:nth-of-type(2) {
   background: white;
   box-shadow: 2px 1px 20px 0px rgba(0, 0, 0, 0.2);
 }
-
 .bedroom img {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   width: 230px;
   height: 120px;
 }
-
-#place h2 {
+#place h3 {
   margin-top: 3px;
   margin-bottom: 0px;
   font-size: 1em;
@@ -247,8 +267,11 @@ nav p:nth-of-type(2) {
 .bedroom-info p {
   margin-top: 3px;
   margin-bottom: 0px;
+  font-size: 0.9em;
 }
-
+#place article h2:last-child {
+  font-size: 1.15em;
+}
 .fa-star {
   font-size: 0.8em;
   color: #0065fc;
@@ -257,7 +280,7 @@ nav p:nth-of-type(2) {
   color: #f2f2f2;
 }
 
-/* LES PLUS POPULAIRES  */
+/* PLACE -> ASIDE -> LES PLUS POPULAIRES  */
 
 #place aside {
   padding: 35px;
@@ -268,7 +291,6 @@ nav p:nth-of-type(2) {
   height: 555px;
   background: #f2f2f2;
 }
-
 .fa-chart-line {
   font-size: 1.2em;
 }
@@ -301,41 +323,38 @@ nav p:nth-of-type(2) {
   width: 130px;
   height: 130px;
 }
-
 .popular-bedroom-info {
   margin-top: 10px;
   margin-left: 20px;
 }
-
 .popular-bedroom-info p {
   font-size: 0.9em;
   margin-top: 3px;
   margin-bottom: 30px;
 }
 
-/* ACTIVITES MARSEILLE */
+/* ACTIVITY -> ACTIVITES */
 
 #activity {
   margin-top: 50px;
 }
-
 #block-activity {
   justify-content: space-between;
   display: flex;
   flex-flow: wrap;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 #block-activity img {
   width: 300px;
 }
-#block-activity h2 {
+#block-activity h3 {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   font-size: 1em;
   position: absolute;
-  bottom: -15px;
-  left: 0px;
-  right: 0px;
+  bottom: -16px;
+  left: -1px;
+  right: -1px;
   background-color: white;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -356,36 +375,30 @@ nav p:nth-of-type(2) {
 .b-a-small {
   position: relative;
 }
-
 .block-activity-two {
   flex-direction: column;
   display: flex;
   justify-content: space-between;
 }
-
 .block-activity-one img {
   height: 450px;
   border-radius: 25px;
 }
-
 .b-a-small-one,
 .b-a-small-one img {
   height: 250px;
   border-radius: 25px;
 }
-
 .b-a-small-two,
 .b-a-small-two img {
   height: 160px;
   border-radius: 25px;
 }
-
 .b-a-small,
 .b-a-small img {
   height: 200px;
   border-radius: 25px;
 }
-
 .b-a-small-one,
 .b-a-small-two,
 .b-a-small {
@@ -400,38 +413,85 @@ footer {
   padding: 50px;
   margin: 50px -50px -50px -50px;
   flex-flow: wrap;
+  justify-content: space-between;
+  padding-right: 330px;
 }
-
-footer h2 {
+footer h3 {
   font-size: 1em;
 }
-
 footer div {
-  margin-right: 250px;
+  width: auto;
 }
 
-@media screen and (max-width: 376px) {
+/* RESPONSIVE PHONE(765px) */
+
+@media screen and (max-width: 765px) {
   body {
     margin: 0px;
   }
+
+  /* HEADER */
+
+  header {
+    align-items: flex-start;
+    height: 130px;
+    width: 100%;
+  }
+  header img {
+    top: 20px;
+    left: 20px;
+  }
+  header ul {
+    justify-content: space-around;
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+  }
+  header ul li::after {
+    position: absolute;
+    content: "";
+    width: auto;
+    height: 3px;
+    background: #f2f2f2;
+    bottom: -20px;
+    top: auto;
+    left: 0px;
+    right: 0px;
+    opacity: 1;
+  }
+
+  header ul li:hover:after {
+    width: auto;
+    background: #0065fc;
+    transition: all ease-in-out 0.5s;
+  }
+  #inscription {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+
+  /* NAV -> SEARCH -> BARRE DE RECHERCHE */
+
   nav {
     padding: 20px;
   }
+  #button {
+    display: none;
+  }
+  #button-icon {
+    display: flex;
+  }
+
+  /* NAV -> FILTERS -> FILTRES */
+
   #filters {
     position: relative;
     height: 220px;
     align-content: flex-end;
   }
-  #filters h1 {
+  #filters h2 {
     position: absolute;
-  }
-
-  #button {
-    display: none;
-  }
-
-  #button-icon {
-    display: flex;
   }
   .filter {
     padding-left: 50px;
@@ -441,12 +501,17 @@ footer div {
     margin-bottom: 10px;
     transition: none;
   }
-
   .icons {
     left: -2px;
     height: 41px;
     width: 41px;
   }
+
+  nav p:last-child {
+    margin-bottom: 10px;
+  }
+
+  /* PLACE -> ASIDE -> LES PLUS POPULAIRES */
 
   #place aside {
     height: 600px;
@@ -454,6 +519,73 @@ footer div {
     padding: 0px;
     border-radius: 0px;
   }
+  #chart {
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  #popular {
+    padding-bottom: 50px;
+  }
+
+  /* PLACE -> ARTICLE -> HEBERGEMENTS */
+
+  #place article {
+    padding: 0px;
+    padding-top: 50px;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: auto;
+    background: white;
+  }
+  #place article h2,
+  #place article h3:last-child {
+    margin-left: 30px;
+  }
+  #rooms {
+    height: auto;
+    flex-direction: column;
+    align-content: center;
+  }
+  .bedroom {
+    margin-bottom: 20px;
+    width: 320px;
+  }
+  .bedroom img {
+    width: 320px;
+  }
+
+  /* ACTIVITY -> ACTIVITES */
+
+  #block-activity {
+    flex-direction: column;
+    align-content: center;
+  }
+  #activity {
+    margin-top: 50px;
+  }
+  #activity h2 {
+    margin-left: 30px;
+  }
+  .block-activity-one,
+  .b-a-small,
+  .b-a-small-one,
+  .b-a-small-two {
+    width: 330px;
+    height: 190px;
+    margin-bottom: 20px;
+  }
+  .block-activity-two {
+    height: auto;
+  }
+  #block-activity img {
+    width: 330px;
+    height: 190px;
+  }
+
+  /* FOOTER */
 
   footer {
     padding: 30px;
@@ -464,24 +596,187 @@ footer div {
     margin-right: 0px;
     margin-bottom: 15px;
   }
+}
+
+/* RESPONSIVE SMALL TABLET  */
+
+@media screen and (min-width: 767px) and (max-width: 869px) {
+  body {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  /* HEADER */
+
+  header img {
+    left: 30px;
+  }
+  #inscription {
+    margin-right: 30px;
+  }
+  nav {
+    padding: 30px;
+  }
+
+  /* PLACE */
 
   #place article {
-    padding: 0px;
     border-radius: 0px;
-    display: flex;
-    flex-direction: column;
-    width: 800px;
-    height: 555px;
-    background: white;
   }
-
+  #place aside {
+    border-radius: 0px;
+    width: -webkit-fill-available;
+    height: auto;
+    margin-bottom: 20px;
+  }
   #popular {
-    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: -webkit-fill-available;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .popular-bedroom {
+    margin-bottom: 20px;
   }
 
-  #chart {
-    padding-top: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
+  /* ACTIVITY */
+
+  #activity h2 {
+    margin-left: 30px;
+  }
+
+  /* FOOTER */
+
+  footer div {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+/* RESPONSIVE SMALL SCREEN DESKTOP */
+
+@media screen and (min-width: 1190px) and (max-width: 1408px) {
+  /* PLACE */
+
+  #place article {
+    width: auto;
+  }
+  .bedroom {
+    margin-bottom: 20px;
+    width: 320px;
+  }
+  .bedroom img {
+    width: 320px;
+  }
+  #place aside {
+    width: -webkit-fill-available;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  #popular {
+    flex-direction: row;
+    height: auto;
+  }
+}
+
+/* RESPONSIVE TABLET & SMALL SCREEN DESKTOP ->PLACE */
+
+@media screen and (min-width: 870px) and (max-width: 1189px) {
+  #place aside {
+    width: -webkit-fill-available;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  #popular {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: -webkit-fill-available;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .popular-bedroom {
+    margin-bottom: 20px;
+  }
+}
+
+/* RESPONSIVE TABLET & SMALL SCREEN DESKTOP ->PLACE/ACTIVITY */
+
+@media screen and (min-width: 757px) and (max-width: 1360px) {
+  #place article {
+    height: auto;
+    width: auto;
+  }
+  #rooms {
+    height: auto;
+  }
+  .bedroom {
+    margin-bottom: 20px;
+    width: 320px;
+  }
+  .bedroom img {
+    width: 320px;
+  }
+  .block-activity-one,
+  .block-activity-two {
+    margin-right: 60px;
+    margin-left: 60px;
+  }
+  .block-activity-one {
+    margin-bottom: 20px;
+  }
+  #block-activity {
+    justify-content: space-around;
+  }
+  footer {
+    padding-right: 50px;
+  }
+}
+
+/* RESPONSIVE TABLET  ->  ACTIVITY/FOOTER */
+
+@media screen and (min-width: 725px) and (max-width: 956px) {
+  .block-activity-one,
+  .block-activity-two {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .block-activity-one {
+    margin-bottom: 20px;
+  }
+  #block-activity {
+    justify-content: space-around;
+  }
+  footer {
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: -50px;
+    margin-top: 50px;
+    padding-top: 20px;
+  }
+}
+
+/* RESPONSIVE TOO SMALL SCREEN */
+
+@media screen and (max-width: 350px) {
+  header,
+  nav,
+  #place,
+  #activity,
+  footer {
+    display: none;
+  }
+  #reponsive-less-than-360 {
+    display: flex;
+    background: black;
+    height: 100vh;
+    color: white;
+    font-size: x-large;
+    align-items: center;
+    padding: 20px;
   }
 }
