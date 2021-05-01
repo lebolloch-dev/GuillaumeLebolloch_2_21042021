@@ -255,6 +255,7 @@ nav p:last-child {
   border-top-right-radius: 20px;
   width: 230px;
   height: 120px;
+  object-fit: cover;
 }
 #place h3 {
   margin-top: 3px;
@@ -322,6 +323,7 @@ nav p:last-child {
   border-bottom-left-radius: 20px;
   width: 130px;
   height: 130px;
+  object-fit: cover;
 }
 .popular-bedroom-info {
   margin-top: 10px;
@@ -346,6 +348,7 @@ nav p:last-child {
 }
 #block-activity img {
   width: 300px;
+  object-fit: cover;
 }
 #block-activity h3 {
   border-bottom-left-radius: 25px;
