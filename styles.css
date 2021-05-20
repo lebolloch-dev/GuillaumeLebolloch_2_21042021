@@ -10,6 +10,10 @@ body {
   margin: 50px 50px 50px 50px;
   font-family: "Raleway", sans-serif;
 }
+html,
+body {
+  max-width: 100%;
+}
 li {
   list-style: none;
 }
@@ -66,21 +70,21 @@ header ul a:hover {
   color: #0065fc;
 }
 
-/* NAV */
+/* SEARCH/FILTERS */
 
 h2 {
   font-size: 1.4em;
   margin-bottom: 0px;
 }
-nav p {
+#search-filters p {
   font-size: 1em;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-/*  NAV -> SEARCH -> BARRE DE RECHERCHE  */
+/*  SEARCH/FILTERS -> SEARCH-BAR  */
 
-nav form {
+#search-filters form {
   align-items: center;
   display: flex;
 
@@ -98,7 +102,7 @@ nav form {
   padding-left: 17px;
   padding-right: 17px;
 }
-#search {
+#search-bar {
   display: flex;
   height: 47px;
   font-size: 1.2em;
@@ -112,8 +116,7 @@ nav form {
   padding-top: 0px;
   padding-bottom: 1px;
 }
-#search:focus {
-  border-left: 2px solid #555d5e;
+#search-bar:focus {
   outline: none;
 }
 #button {
@@ -145,13 +148,14 @@ nav form {
   margin-left: -40px;
 }
 
-/* NAV -> FILTERS -> FILTRES */
+/* SEARCH/FILTERS -> FILTERS */
 
 #filters {
   display: flex;
   margin-top: 20px;
   align-items: baseline;
   flex-flow: wrap;
+  padding-left: 0px;
 }
 #filters h2 {
   margin-right: 20px;
@@ -162,34 +166,41 @@ nav form {
   align-items: center;
   border-radius: 100px;
   border: 2px solid #f2f2f2;
-  padding: 10px;
+  padding: 12px;
   padding-left: 60px;
   padding-right: 20px;
   margin-right: 20px;
+  margin-bottom: 10px;
   font-size: 1.2em;
   font-weight: bold;
   transition: all ease-in-out 0.5s;
+  cursor: pointer;
 }
-.filter:hover,
-.fa-heart:hover {
+.filter:hover .icons {
   transition: all ease-in-out 0.5s;
-  background-color: #deebff;
+  transform: rotate(360deg);
+}
+.filter:hover {
+  background: #deebff;
+  color: #0065fc;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.4);
 }
 .filter i {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #0065fc;
   background: #deebff;
 }
 .icons {
   position: absolute;
   display: flex;
-  left: 0px;
+  left: -2px;
   align-items: center;
   justify-content: center;
-  height: 44px;
-  width: 44px;
+  height: 50px;
+  width: 50px;
   background-color: #deebff;
   border-radius: 100px;
+  transition: all ease-in-out 0.5s;
 }
 #info {
   margin-right: 10px;
@@ -207,8 +218,8 @@ nav form {
   font-size: 0.8em;
   color: #0065fc;
 }
-nav p:last-child {
-  margin-top: 23px;
+#search-filters p:last-child {
+  margin-top: 38px;
   margin-bottom: 40px;
 }
 
@@ -270,8 +281,10 @@ nav p:last-child {
   margin-bottom: 0px;
   font-size: 0.9em;
 }
-#place article h2:last-child {
+#place article p:last-child {
   font-size: 1.15em;
+  font-weight: bold;
+  cursor: pointer;
 }
 .fa-star {
   font-size: 0.8em;
@@ -298,8 +311,6 @@ nav p:last-child {
 #chart {
   justify-content: space-between;
   display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 #popular {
   display: flex;
@@ -425,6 +436,9 @@ footer h3 {
 footer div {
   width: auto;
 }
+footer p {
+  cursor: pointer;
+}
 
 /* RESPONSIVE PHONE(765px) */
 
@@ -441,14 +455,18 @@ footer div {
     width: 100%;
   }
   header img {
-    top: 20px;
+    top: 15px;
     left: 20px;
+  }
+  nav {
+    width: 100%;
   }
   header ul {
     justify-content: space-around;
     width: 100%;
     bottom: 0px;
     position: absolute;
+    padding-left: 0px;
   }
   header ul li::after {
     position: absolute;
@@ -474,10 +492,12 @@ footer div {
     top: 30px;
   }
 
-  /* NAV -> SEARCH -> BARRE DE RECHERCHE */
-
-  nav {
+  /* SEARCH/FILTERS -> SEARCH-BAR */
+  #search-filters {
     padding: 20px;
+  }
+  #search-bar {
+    width: 260px;
   }
   #button {
     display: none;
@@ -486,31 +506,23 @@ footer div {
     display: flex;
   }
 
-  /* NAV -> FILTERS -> FILTRES */
+  /* SEARCH/FILTERS -> FILTERS */
 
   #filters {
     position: relative;
-    height: 220px;
+
     align-content: flex-end;
   }
-  #filters h2 {
-    position: absolute;
-  }
+
   .filter {
-    padding-left: 50px;
-    padding-right: 10px;
     margin-right: 10px;
     font-size: 1em;
-    margin-bottom: 10px;
     transition: none;
-  }
-  .icons {
-    left: -2px;
-    height: 41px;
-    width: 41px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
-  nav p:last-child {
+  #search-filters p:last-child {
     margin-bottom: 10px;
   }
 
@@ -524,8 +536,8 @@ footer div {
   }
   #chart {
     padding-top: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   #popular {
     padding-bottom: 50px;
@@ -544,8 +556,8 @@ footer div {
     background: white;
   }
   #place article h2,
-  #place article h3:last-child {
-    margin-left: 30px;
+  #place article p:last-child {
+    margin-left: 20px;
   }
   #rooms {
     height: auto;
@@ -570,7 +582,7 @@ footer div {
     margin-top: 50px;
   }
   #activity h2 {
-    margin-left: 30px;
+    margin-left: 20px;
   }
   .block-activity-one,
   .b-a-small,
@@ -591,7 +603,7 @@ footer div {
   /* FOOTER */
 
   footer {
-    padding: 30px;
+    padding: 20px;
     margin: 0px;
     flex-direction: column;
   }
@@ -603,7 +615,7 @@ footer div {
 
 /* RESPONSIVE SMALL TABLET  */
 
-@media screen and (min-width: 767px) and (max-width: 869px) {
+@media screen and (min-width: 765px) and (max-width: 869px) {
   body {
     margin-left: 0px;
     margin-right: 0px;
@@ -617,7 +629,7 @@ footer div {
   #inscription {
     margin-right: 30px;
   }
-  nav {
+  #search-filters {
     padding: 30px;
   }
 
@@ -628,13 +640,12 @@ footer div {
   }
   #place aside {
     border-radius: 0px;
-    width: -webkit-fill-available;
+    width: 100%;
     height: auto;
     margin-bottom: 20px;
   }
   #popular {
     display: flex;
-    flex-direction: row;
     height: 100%;
     width: -webkit-fill-available;
     align-items: center;
@@ -652,6 +663,10 @@ footer div {
   }
 
   /* FOOTER */
+
+  footer {
+    margin-right: 0px;
+  }
 
   footer div {
     padding-right: 30px;
@@ -675,7 +690,7 @@ footer div {
     width: 320px;
   }
   #place aside {
-    width: -webkit-fill-available;
+    width: 100%;
     height: auto;
     margin-bottom: 20px;
   }
@@ -689,13 +704,12 @@ footer div {
 
 @media screen and (min-width: 870px) and (max-width: 1189px) {
   #place aside {
-    width: -webkit-fill-available;
+    width: 100%;
     height: auto;
     margin-bottom: 20px;
   }
   #popular {
     display: flex;
-    flex-direction: row;
     height: 100%;
     width: -webkit-fill-available;
     align-items: center;
@@ -712,7 +726,7 @@ footer div {
 @media screen and (min-width: 757px) and (max-width: 1360px) {
   #place article {
     height: auto;
-    width: auto;
+    width: 100%;
   }
   #rooms {
     height: auto;
@@ -754,13 +768,6 @@ footer div {
   #block-activity {
     justify-content: space-around;
   }
-  footer {
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: -50px;
-    margin-top: 50px;
-    padding-top: 20px;
-  }
 }
 
 /* RESPONSIVE TOO SMALL SCREEN */
@@ -781,5 +788,24 @@ footer div {
     font-size: x-large;
     align-items: center;
     padding: 20px;
+  }
+}
+
+@media screen and (max-width: 1176px) {
+  #rooms {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 1089px) {
+  #filters h2 {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  #filters :nth-child(3) {
+    margin-right: 0px;
   }
 }
