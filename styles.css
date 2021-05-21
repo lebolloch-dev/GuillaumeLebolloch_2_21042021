@@ -798,7 +798,7 @@ footer p {
 }
 
 @media screen and (max-width: 1089px) {
-  #filters h2 {
+  #filters li:first-child {
     width: 100%;
     padding-bottom: 10px;
   }
