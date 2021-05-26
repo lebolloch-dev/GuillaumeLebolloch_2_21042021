@@ -133,6 +133,7 @@ h2 {
   margin: -4px;
   border: none;
   width: 130px;
+  cursor: pointer;
 }
 #button-icon {
   align-items: center;
@@ -179,8 +180,10 @@ h2 {
 .filter:hover .icons {
   transition: all ease-in-out 0.5s;
   transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
 }
 .filter:hover {
+  transition: all ease-in-out 0.5s;
   background: #deebff;
   color: #0065fc;
   box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.4);
@@ -521,7 +524,9 @@ footer p {
     padding-top: 14px;
     padding-bottom: 14px;
   }
-
+  .filter:hover .icons {
+    transform: rotate(0deg);
+  }
   #search-filters p:last-child {
     margin-bottom: 10px;
   }
